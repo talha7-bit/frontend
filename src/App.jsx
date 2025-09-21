@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Usersignup from './pages/Usersignup'
-import Doctorsignup from './pages/Doctorsignup'
+
 import Doctorlogin from "./pages/Doctorlogin"
 import Userlogin from './pages/Userlogin'
 import { useAdmin, useAuth, useAuthenticate } from './hook/useAuth'
