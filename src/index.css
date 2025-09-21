@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+/* index.css */
+@theme {
+  --breakpoint-xs: 320px;   /* iPhone 5 / SE */
+  --breakpoint-xsm: 360px;  /* Small Android */
+  --breakpoint-ssm: 375px;  /* Most iPhones */
+  --breakpoint-mbl: 414px;  /* iPhone Plus / XR / 11 */
+  --breakpoint-lph: 428px;  /* Galaxy S+, Pixel */
+}
