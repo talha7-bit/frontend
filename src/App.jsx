@@ -4,9 +4,9 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Usersignup from './pages/Usersignup'
-import Doctorsignup from './pages/doctorsignup'
-import Doctorlogin from './pages/doctorlogin'
-import Userlogin from './pages/userlogin'
+import Doctorsignup from './pages/Doctorsignup'
+import Doctorlogin from "./pages/Doctorlogin"
+import Userlogin from './pages/Userlogin'
 import { useAdmin, useAuth, useAuthenticate } from './hook/useAuth'
 import Onboard from './pages/Onboard'
 import Home from './pages/Home'
@@ -47,7 +47,7 @@ function App() {
 
 
       <Route path='/usersignup' element={<Usersignup/>}/>
-       <Route path='/doctorlogin' element={<Doctorlogin/>}/>
+       
       <Route path='/userlogin' element={<Userlogin/>}/>
       <Route path='/' element={<Home/>}/>
       <Route path='/doctors' element={<Doctors/>}/>
@@ -56,6 +56,7 @@ function App() {
 
       <Route path='/adminlogin' element={<Adminlogin/>}/>
       <Route path='/doctorsignup' element={authadmin ? <Adddoctor/> : <Doctorlogin/>}/>
+      <Route path='/doctorlogin' element={<Doctorlogin/>}/>
       <Route path='/adminlayout' element={authadmin ? <Layout/> : <Home/>}/>
       <Route path='/adminappointments' element={authadmin ? <Mappointments/> : <Home/>}/>
       <Route path='/alldoctorsl' element={authadmin ? <Alldoctorsl/> : <Home/>}/>
