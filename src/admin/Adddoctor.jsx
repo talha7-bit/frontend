@@ -3,7 +3,7 @@ import Siderbar from './components/Siderbar'
 import Navbar from '../components/Navbar'
 import Dashboard from './components/Dashboard'
 import Alldoctors from '../components/Alldoctors'
-import Doctorsignup from '../pages/doctorsignup'
+import Doctorsignup from '../pages/Doctorsignup'
 import Mnav from '../components/Mnav'
 import Mobile from './components/Mobile'
 
