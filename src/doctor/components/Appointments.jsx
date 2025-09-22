@@ -4,11 +4,13 @@ import React from 'react'
 
 const Appointments = () => {
 
+  const API = import.meta.env.VITE_API_URL || "/api";
+
     const {data:appointments}=useQuery({
         queryKey:["appointments"],
         queryFn:async()=>{
             try {
-            const res=await axios.get("/api/doctor/appointments",{withCredentials:true})
+            const res=await axios.get(`${API}/doctor/appointments`,{withCredentials:true})
             console.log(res)
             return res.data    
             } catch (error) {

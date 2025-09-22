@@ -1,11 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 export const useAuth=()=>{
+
+    const API = import.meta.env.VITE_API_URL || "/api";
     const {data,isLoading,error}=useQuery({
     queryKey:["auth"],
     queryFn:async()=>{
         try {
-            const res=await axios.get("/api/doctor",{withCredentials:true})
+            const res=await axios.get(`${API}/doctor`,{withCredentials:true})
             console.log(res)
             return res.data
         } catch (error) {
@@ -23,7 +25,7 @@ export const useAuthenticate=()=>{
             queryKey:["authenticate"],
             queryFn:async()=>{
                 try {
-                    const res=await axios.get("/api/user",{withCredentials:true})
+                    const res=await axios.get(`${API}/user`,{withCredentials:true})
                     console.log(res)
                     return res.data
                 } catch (error) {
@@ -41,7 +43,7 @@ export const useAdmin=()=>{
         queryKey:["admin"],
         queryFn:async()=>{
            try {
-             const res=await axios.get('/api/admin',{withCredentials:true})
+             const res=await axios.get(`${API}/admin`,{withCredentials:true})
              console.log(res)
              return res.data
            } catch (error) {

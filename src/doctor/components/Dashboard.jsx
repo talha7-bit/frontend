@@ -9,12 +9,14 @@ const Dashboard = () => {
   const navigate=useNavigate()
   const queryClient=useQueryClient()
 
+  const API = import.meta.env.VITE_API_URL || "/api";
+
   const {data:latest}=useQuery({
       queryKey:["pen"],
       queryFn:async()=>{
         try {
           console.log("PENDING QUERY RUNS")
-           const res=await axios.get("/api/doctor/latest",{withCredentials:true})
+           const res=await axios.get(`${API}/doctor/latest`,{withCredentials:true})
           
            console.log("res",res)
            return res.data
@@ -29,7 +31,7 @@ const Dashboard = () => {
         queryKey:["dappointments"],
         queryFn:async()=>{
             try {
-              const res=await axios.get("/api/doctor/appointments",{withCredentials:true}) 
+              const res=await axios.get(`${API}/doctor/appointments`,{withCredentials:true}) 
               console.log(res)
               return res.data.data
             } catch (error) {
@@ -41,7 +43,7 @@ const Dashboard = () => {
     const {mutate:acceptappointment}=useMutation({
       mutationFn:async(id)=>{
         try {
-         const res=await axios.post(`/api/doctor/accept/${id}`,{},{withCredentials:true})
+         const res=await axios.post(`${API}/doctor/accept/${id}`,{},{withCredentials:true})
          console.log(res)
          return res.data?.data 
         } catch (error) {
@@ -66,7 +68,7 @@ const Dashboard = () => {
 
     const {mutate:rejectappointment}=useMutation({
       mutationFn:async(id)=>{
-        const res=await axios.post(`/api/doctor/reject/${id}`,{},{withCredentials:true})
+        const res=await axios.post(`${API}/doctor/reject/${id}`,{},{withCredentials:true})
         console.log(res)
         return res.data?.data
       },

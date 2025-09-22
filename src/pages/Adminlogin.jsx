@@ -16,9 +16,11 @@ const Adminlogin = () => {
     const queryClient=useQueryClient()
     const navigate=useNavigate()
 
+    const API = import.meta.env.VITE_API_URL || "/api";
+
     const {mutate}=useMutation({
         mutationFn:async(data)=>{
-            const res=await axios.post("/api/admin/login",data,{withCredentials:true})
+            const res=await axios.post(`${API}/admin/login`,data,{withCredentials:true})
             console.log(res)
             return res.data
         },

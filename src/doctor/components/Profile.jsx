@@ -5,11 +5,13 @@ import { Link } from 'react-router-dom'
 
 const Profile = () => {
 
+  const API = import.meta.env.VITE_API_URL || "/api";
+
     const {data:profile}=useQuery({
         queryKey:["profile"],
         queryFn:async(req,res,data)=>{
             try {
-             const res=await axios.get("/api/doctor/profile",{withCredentials:true}) 
+             const res=await axios.get(`${API}/doctor/profile`,{withCredentials:true}) 
              console.log(res)
              return res.data.data  
             } catch (error) {

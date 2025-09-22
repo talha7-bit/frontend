@@ -6,11 +6,13 @@ import patient from "../../assets/dashboard/patient.png"
 import { Book } from 'lucide-react'
 const Dashboard = () => {
 
+    const API = import.meta.env.VITE_API_URL || "/api";
+
     const {data:doctors}=useQuery({
         queryKey:["all"],
         queryFn:async()=>{
             try {
-                const res=await axios.get("/api/doctor/alldoctors",{withCredentials:true})
+                const res=await axios.get(`${API}/doctor/alldoctors`,{withCredentials:true})
                 console.log(res)
                 return res.data.data;
             } catch (error) {
@@ -24,7 +26,7 @@ const Dashboard = () => {
         queryKey:["users"],
         queryFn:async(req,res,next)=>{
             try {
-             const res=await axios.get("/api/user/allusers",{withCredentials:true})
+             const res=await axios.get(`${API}/user/allusers`,{withCredentials:true})
              console.log(res)
              return res.data.data;   
             } catch (error) {
@@ -38,7 +40,7 @@ const Dashboard = () => {
         queryKey:["appointments"],
         queryFn:async(req,res,next)=>{
             try {
-               const res=await axios.get("/api/appointment/aappointments",{withCredentials:true})
+               const res=await axios.get(`${API}/appointment/aappointments`,{withCredentials:true})
                console.log(res)
                return res.data.data
             
@@ -53,7 +55,7 @@ const Dashboard = () => {
         queryKey:["accepted"],
         queryFn:async()=>{
             try {
-            const res=await axios.get("/api/admin/accepted",{withCredentials:true})
+            const res=await axios.get(`${API}/admin/accepted`,{withCredentials:true})
             console.log(res)
             return res.data?.data
                 

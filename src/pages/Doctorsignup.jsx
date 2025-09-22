@@ -11,9 +11,11 @@ const Doctorsignup = () => {
     const queryClient=useQueryClient()
     const navigate=useNavigate()
 
+    const API = import.meta.env.VITE_API_URL || "/api";
+
     const {mutate}=useMutation({
       mutationFn:async(data)=>{
-            const res=await axios.post("/api/doctor/signup",data,{
+            const res=await axios.post(`${API}/doctor/signup`,data,{
               headers:{
                 "Content-Type":"multipart/form-data"
               },

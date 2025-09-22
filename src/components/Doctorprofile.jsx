@@ -11,6 +11,8 @@ const Doctorprofile = () => {
   const maxdate=new Date(Date.now() + 7 *24 *60 *60 *1000).toISOString().split('T')[0]
  const {register,handleSubmit,reset,formState:{errors}}=useForm()
    const id=JSON.parse(localStorage.getItem("doctorid"))
+
+   const API = import.meta.env.VITE_API_URL || "/api";
      
 
     const {data:profile}=useQuery({
@@ -18,7 +20,7 @@ const Doctorprofile = () => {
         queryFn:async({queryKey})=>{
             try {
               const [_key,id]=queryKey
-             const res=await axios.get(`/api/user/doctorprofile/${id}`,{withCredentials:true})   
+             const res=await axios.get(`${API}/user/doctorprofile/${id}`,{withCredentials:true})   
              console.log(res)
              return res.data.data
             } catch (error) {
@@ -29,7 +31,7 @@ const Doctorprofile = () => {
 
     const {mutate}=useMutation({
       mutationFn:async(data)=>{
-        const res=await axios.post(`/api/appointment/apply/${profile._id}`,data,{withCredentials:true})
+        const res=await axios.post(`${API}/appointment/apply/${profile._id}`,data,{withCredentials:true})
         console.log(res)
         return res.data
       },

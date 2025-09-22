@@ -16,10 +16,12 @@ const Navbar = (props) => {
     const {data:authuser}=useAuthenticate()
     const {data:authadmin}=useAdmin()
 
+    const API = import.meta.env.VITE_API_URL || "/api";
+
 
     const {mutate:doctor}=useMutation({
         mutationFn:async()=>{
-          const res=await axios.post("/api/doctor/logout",{},{withCredentials:true})
+          const res=await axios.post(`${API}/doctor/logout`,{},{withCredentials:true})
           console.log(res)
           return res.data
         },
@@ -36,7 +38,7 @@ const Navbar = (props) => {
        const {mutate:user}=useMutation({
         mutationFn:async()=>{
           console.log('working')
-          const res=await axios.post("/api/user/logout",{},{withCredentials:true})
+          const res=await axios.post(`${API}/user/logout`,{},{withCredentials:true})
           console.log(res)
           return res.data
         },
@@ -53,7 +55,7 @@ const Navbar = (props) => {
        const {mutate:admin}=useMutation({
         mutationFn:async()=>{
          
-          const res=await axios.post("/api/admin/logout",{},{withCredentials:true})
+          const res=await axios.post(`${API}/admin/logout`,{},{withCredentials:true})
            
           console.log(res)
           return res.data

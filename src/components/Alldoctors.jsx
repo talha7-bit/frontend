@@ -8,12 +8,14 @@ const Alldoctors = (props) => {
     const[id,setid]=useState("")
     const queryClient=useQueryClient()
     const navigate=useNavigate()
+
+    const API = import.meta.env.VITE_API_URL || "/api";
     
     const {data:doctors}=useQuery({
         queryKey:["doctors"],
         queryFn:async()=>{
             try {
-                const res=await axios.get("/api/doctor/alldoctors",{withCredentials:true})
+                const res=await axios.get(`${API}/doctor/alldoctors`,{withCredentials:true})
                 console.log(res)
                 return res?.data?.data  || []
             } catch (error) {
@@ -25,7 +27,7 @@ const Alldoctors = (props) => {
     const {mutate,data}=useMutation({
             mutationFn:async()=>{
                 console.log(props.result)
-                const res=await axios.post(`/api/doctor/getspecial/${props.result}`,{},{withCredentials:true})
+                const res=await axios.post(`${API}/doctor/getspecial/${props.result}`,{},{withCredentials:true})
                 console.log(res)
                 return res.data.data
             },
