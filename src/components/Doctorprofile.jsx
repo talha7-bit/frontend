@@ -12,7 +12,7 @@ const Doctorprofile = () => {
  const {register,handleSubmit,reset,formState:{errors}}=useForm()
    const id=JSON.parse(localStorage.getItem("doctorid"))
 
-   const API = import.meta.env.VITE_API_URL || "/api";
+   const API = import.meta.env.VITE_API_URL;
      
 
     const {data:profile}=useQuery({

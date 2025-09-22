@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Myprofile = () => {
 
-  const API = import.meta.env.VITE_API_URL || "/api";
+  const API = import.meta.env.VITE_API_URL ;
 
     const {data}=useQuery({
         queryKey:["userprofile"],

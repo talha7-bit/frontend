@@ -9,7 +9,7 @@ const Dashboard = () => {
   const navigate=useNavigate()
   const queryClient=useQueryClient()
 
-  const API = import.meta.env.VITE_API_URL || "/api";
+  const API = import.meta.env.VITE_API_URL;
 
   const {data:latest}=useQuery({
       queryKey:["pen"],

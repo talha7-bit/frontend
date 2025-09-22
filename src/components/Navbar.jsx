@@ -16,7 +16,7 @@ const Navbar = (props) => {
     const {data:authuser}=useAuthenticate()
     const {data:authadmin}=useAdmin()
 
-    const API = import.meta.env.VITE_API_URL || "/api";
+    const API = import.meta.env.VITE_API_URL;
 
 
     const {mutate:doctor}=useMutation({

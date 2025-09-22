@@ -6,7 +6,7 @@ import patient from "../../assets/dashboard/patient.png"
 import { Book } from 'lucide-react'
 const Dashboard = () => {
 
-    const API = import.meta.env.VITE_API_URL || "/api";
+    const API = import.meta.env.VITE_API_URL ;
 
     const {data:doctors}=useQuery({
         queryKey:["all"],

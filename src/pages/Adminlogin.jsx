@@ -16,7 +16,7 @@ const Adminlogin = () => {
     const queryClient=useQueryClient()
     const navigate=useNavigate()
 
-    const API = import.meta.env.VITE_API_URL || "/api";
+    const API = import.meta.env.VITE_API_URL;
 
     const {mutate}=useMutation({
         mutationFn:async(data)=>{

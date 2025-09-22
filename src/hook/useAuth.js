@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 export const useAuth=()=>{
 
-    const API = import.meta.env.VITE_API_URL || "/api";
+    const API = import.meta.env.VITE_API_URL ;
     const {data,isLoading,error}=useQuery({
     queryKey:["auth"],
     queryFn:async()=>{
