@@ -20,6 +20,7 @@ const Adminlogin = () => {
 
     const {mutate}=useMutation({
         mutationFn:async(data)=>{
+            console.log(`Frontend is calling ${API}/admin/login`)
             const res=await axios.post(`${API}/admin/login`,data,{withCredentials:true})
             console.log(res)
             return res.data
