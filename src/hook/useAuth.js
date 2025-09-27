@@ -43,8 +43,10 @@ export const useAdmin=()=>{
         queryKey:["admin"],
         queryFn:async()=>{
            try {
+            alert("called")
              const res=await axios.get(`${API}/admin`,{withCredentials:true})
              console.log(res)
+             console.log("succesful")
              return res.data
            } catch (error) {
             console.log("an error occured",error)
