@@ -54,7 +54,7 @@ const Dashboard = () => {
       queryClient.invalidateQueries(["pen"])
       queryClient.invalidateQueries(["dappointments"])
       toast.success("appointment accepted succesfully")
-      window.location.reload()
+     
       },
       onError:(error)=>{
       console.log("an error occured",error)
@@ -77,7 +77,7 @@ const Dashboard = () => {
         queryClient.invalidateQueries(["pen"])
         queryClient.invalidateQueries(["dappointments"])
         toast.success("appointment rejected succesfully")
-        window.location.reload()
+       
       },
       onError:(err)=>{
         console.log("an error occured",err)
