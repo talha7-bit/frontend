@@ -27,6 +27,7 @@ const Navbar = (props) => {
         },
         onSuccess:()=>{
           queryClient.invalidateQueries(["auth"])
+          window.location.reload()
           toast.success("doctor logout succesfully")
         },
         onError:(err)=>{
@@ -48,6 +49,7 @@ const Navbar = (props) => {
         },
         onError:(err)=>{
           console.log("an error occured",err)
+          window.location.reload()
           toast.error("an error occured please try again")
         }
        })

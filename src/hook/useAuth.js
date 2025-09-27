@@ -8,6 +8,7 @@ export const useAuth=()=>{
     queryFn:async()=>{
         try {
             const res=await axios.get(`${API}/doctor`,{withCredentials:true})
+            console.log("succesful")
             console.log(res)
             return res.data
         } catch (error) {
@@ -28,6 +29,7 @@ export const useAuthenticate=()=>{
             queryFn:async()=>{
                 try {
                     const res=await axios.get(`${UPI}/user`,{withCredentials:true})
+                    console.log("succesful")
                     console.log(res)
                     return res.data
                 } catch (error) {
