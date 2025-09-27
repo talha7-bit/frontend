@@ -40,9 +40,7 @@ function App() {
   const {data:authuser}=useAuthenticate()
   const {data:authadmin}=useAdmin()
 
-  if(authuser){
-    alert("succesful")
-  }
+  
 
   return (
    <div className=''>

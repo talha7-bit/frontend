@@ -52,6 +52,7 @@ const Dashboard = () => {
       },
       onSuccess:(res)=>{
       queryClient.invalidateQueries(["pen"])
+      queryClient.invalidateQueries(["dappointments"])
       toast.success("appointment accepted succesfully")
       window.location.reload()
       },
@@ -74,6 +75,7 @@ const Dashboard = () => {
       },
       onSuccess:(res)=>{
         queryClient.invalidateQueries(["pen"])
+        queryClient.invalidateQueries(["dappointments"])
         toast.success("appointment rejected succesfully")
         window.location.reload()
       },
