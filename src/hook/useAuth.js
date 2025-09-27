@@ -21,6 +21,7 @@ return {data,isLoading,error}
 }
 
 export const useAuthenticate=()=>{
+    const API = import.meta.env.VITE_API_URL ;
         const {data,isLoading}=useQuery({
             queryKey:["authenticate"],
             queryFn:async()=>{
@@ -39,6 +40,7 @@ export const useAuthenticate=()=>{
 }
 
 export const useAdmin=()=>{
+    const API = import.meta.env.VITE_API_URL ;
     const {data,isLoading}=useQuery({
         queryKey:["admin"],
         queryFn:async()=>{

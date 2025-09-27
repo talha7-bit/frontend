@@ -26,11 +26,8 @@ const Adminlogin = () => {
             return res.data
         },
         onSuccess:async (res)=>{
-            //queryClient.invalidateQueries(["admin"])
+            queryClient.invalidateQueries(["admin"])
             toast.success(res.message)
-            console.log(`it is calling ${API}/admin/`)
-            const result=await axios.get(`${API}/admin/`,{withCredentials:true})
-            console.log(result)
             navigate("/adminlayout")
         },
         onError:(err)=>{
