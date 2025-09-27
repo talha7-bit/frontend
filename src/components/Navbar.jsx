@@ -27,7 +27,6 @@ const Navbar = (props) => {
         },
         onSuccess:()=>{
           queryClient.invalidateQueries(["auth"])
-          navigate(0)
           toast.success("doctor logout succesfully")
         },
         onError:(err)=>{
@@ -62,7 +61,8 @@ const Navbar = (props) => {
           return res.data
         },
         onSuccess:()=>{
-           queryClient.invalidateQueries(["admin"])
+          queryClient.invalidateQueries(["admin"])
+          window.location.reload()
           toast.success("admin logout succesfully")
         },
         onError:(err)=>{
