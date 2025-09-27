@@ -48,6 +48,7 @@ export const useAdmin=()=>{
              return res.data
            } catch (error) {
             console.log("an error occured",error)
+            throw(error)
            }
         }
     })
