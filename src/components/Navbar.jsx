@@ -45,7 +45,8 @@ const Navbar = (props) => {
         },
         onSuccess:()=>{
            queryClient.invalidateQueries(["authenticate"])
-          toast.success("user logout succesfully")
+           window.location.reload()
+           toast.success("user logout succesfully")
         },
         onError:(err)=>{
           console.log("an error occured",err)
