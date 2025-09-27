@@ -53,7 +53,7 @@ const Alldoctors = (props) => {
   return (
     <div className='w-screen overflow-x-hidden'>
        <div className='flex flex-col mx-5 sm:mx-10 mt-10 items-center justify-center'>
-        <h1 className='font-bold text-lg'>Top Doctors to Book</h1>
+        <h1 className='font-bold text-lg mb-5'>Top Doctors to Book</h1>
         <p className='font-semibold tracking-tighter w-80 md:w-100'>Simply browse through our extensive list of trusted doctors</p>
         
        {props.result ? (

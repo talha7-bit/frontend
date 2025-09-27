@@ -89,7 +89,7 @@ const Doctorsignup = () => {
            
            <div className='mt-1/2'>
             <label className='font-semibold'>Experience</label>
-            <input className='px-4 py-1 rounded-md' type='text' placeholder='bio' {...register("experience",{required:true})}/>
+            <input className='px-4 py-1 rounded-md' type='text' placeholder='experience' {...register("experience",{required:true})}/>
            </div>
            <div className=''>
             <label className='font-semibold'>Image</label>

@@ -26,7 +26,7 @@ const Home = () => {
       <div className='absolute flex lg:hidden top-20 right-8 z-10'>
         <Mnav/>
       </div>}
-      <div className='overflow-x-hidden mx-5 md:mx-0 lg:mx-6'>
+      <div className='overflow-x-hidden mx-8'>
         <Hero/>
       </div>
       <Speciality/>
@@ -34,10 +34,10 @@ const Home = () => {
         <Alldoctors/>
       </div>
       
-      <div className='absolute md:mt-7'>
+      <div className='absolute md:mt-7 mx-1 md:mx-3'>
         <Banner/>
       </div>
-      <div className='absolute hidden sm:flex top-450 md:top-535 lg:top-450 xl:top-470'>
+      <div className='absolute hidden sm:flex top-450 md:top-535 lg:top-450 xl:top-470 mx-1 md:mx-3'>
         <Footer/>
       </div>
       

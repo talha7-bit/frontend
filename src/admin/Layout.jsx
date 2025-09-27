@@ -23,7 +23,7 @@ const Layout = () => {
       <div className='absolute fixed left-0 lg:left-10 hidden lg:flex'>
         <Siderbar/>
       </div>
-      <div className='absolute top-20 left-5 lg:left-65'>
+      <div className='absolute top-20 left-10 lg:left-65'>
         <Dashboard/>
       </div>
     </div>
