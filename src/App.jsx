@@ -35,15 +35,7 @@ import { useEffect } from 'react'
 function App() {
   const [count, setCount] = useState(0)
 
-  useEffect(()=>{
-    try {
-      const req=useAdmin()
-      console.log("it is working",req)
-    } catch (error) {
-      console.log("an error occured while calling useadmin",error)
-    }
-  })
-
+  
   const {data:authdoctor,authdoctorisLoading}=useAuth()
   const {data:authuser}=useAuthenticate()
   const {data:authadmin}=useAdmin()

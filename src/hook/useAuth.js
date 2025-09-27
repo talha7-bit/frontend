@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 export const useAuth=()=>{
-    console.log(`api from env ${import.meta.env.VITE_API_URL }`)
+    //console.log(`api from env ${import.meta.env.VITE_API_URL }`)
     const API = import.meta.env.VITE_API_URL ;
     const {data,isLoading,error}=useQuery({
     queryKey:["auth"],
@@ -21,7 +21,7 @@ return {data,isLoading,error}
 }
 
 export const useAuthenticate=()=>{
-    console.log(`api from env ${import.meta.env.VITE_API_URL }`)
+    //console.log(`api from env ${import.meta.env.VITE_API_URL }`)
     const UPI = import.meta.env.VITE_API_URL ;
         const {data,isLoading}=useQuery({
             queryKey:["authenticate"],
@@ -41,7 +41,7 @@ export const useAuthenticate=()=>{
 }
 
 export const useAdmin=()=>{
-    console.log(`api from env ${import.meta.env.VITE_API_URL }`)
+    //console.log(`api from env ${import.meta.env.VITE_API_URL }`)
     const AdPI = import.meta.env.VITE_API_URL ;
     const {data,isLoading}=useQuery({
         queryKey:["admin"],
